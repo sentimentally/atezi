@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>一马当先体验营</title>
+		<meta name="author" content="李潇喃：www.muzisheji.com" />
+		<!-- IE最新兼容 -->
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+		<!-- 国产浏览器高速 -->
+		<!-- <meta name="renderer" content="webkit"> -->
+		<!-- 移动设备禁止缩放 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<link rel="icon" type="image/png" href="img/favicon.png">
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" sizes="192x192" href="img/app.png">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Mzsj" />
+		<link rel="apple-touch-icon-precomposed" href="img/app.png">
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<meta name="msapplication-TileImage" content="img/app.png">
+		<meta name="msapplication-TileColor" content="#0e90d2">
+		<link rel="stylesheet" href="css/p3.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.fullPage.min.js"></script>
+		<link rel="stylesheet" href="css/jquery.fullPage.css">
+		<script>
+		$(function(){
+			$(".action_p1").click(function(){
+				$(".action_top").addClass("action_top_start");
+				setTimeout(function(){
+					location.href = '#page2';
+				}, 500);
+			});
+		    $('#dowebok').fullpage({
+		    	anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+		    	afterLoad: function(anchorLink, index){
+		    		if(index == 1){
+						$(".action_top").removeClass("action_top_start");
+					}
+					if(index == 2){
+						$(".p2_1").addClass("p2_1_dh");
+						$(".p2_2").addClass("p2_2_dh");
+						$(".p2_cat").addClass("p2_cat_dh");
+						$(".p2_cat_2").addClass("p2_cat_2_dh");
+					}
+					if (index == 4) {
+						$(".p4_l_1").addClass("p4_l_1_dh");
+						$(".p4_l_2").addClass("p4_l_2_dh");
+						$(".p4_l_3").addClass("p4_l_3_dh");
+						$(".p4_l_4").addClass("p4_l_4_dh");
+						$(".p4_r_1").addClass("p4_r_1_dh");
+						$(".p4_r_2").addClass("p4_r_2_dh");
+						$(".p4_r_3").addClass("p4_r_3_dh");
+						$(".p4_r_4").addClass("p4_r_4_dh");
+					}
+					if(index == 5){
+						var p5logo = $(".body_p5").css('display');
+						if (p5logo == 'block') {
+							$(".logo").show();	
+						}else{
+							$(".logo").hide();
+						}
+					}
+				},
+				onLeave: function(index, direction){
+					if(index == 2){
+						$(".p2_1").removeClass("p2_1_dh");
+						$(".p2_2").removeClass("p2_2_dh");
+						$(".p2_cat").removeClass("p2_cat_dh");
+						$(".p2_cat_2").removeClass("p2_cat_2_dh");
+					}
+					if (index == 4) {
+						$(".p4_l_1").removeClass("p4_l_1_dh");
+						$(".p4_l_2").removeClass("p4_l_2_dh");
+						$(".p4_l_3").removeClass("p4_l_3_dh");
+						$(".p4_l_4").removeClass("p4_l_4_dh");
+						$(".p4_r_1").removeClass("p4_r_1_dh");
+						$(".p4_r_2").removeClass("p4_r_2_dh");
+						$(".p4_r_3").removeClass("p4_r_3_dh");
+						$(".p4_r_4").removeClass("p4_r_4_dh");
+					}
+					if(index == 5){
+						$(".logo").show();
+					}
+				}
+		    });
+		});
+		</script>
+	</head>
+
+	<body>
+		<header class="logo ps">
+			<img src="img/logo.png" alt="阿特兹">
+		</header>
+		<div id="dowebok">
+			<div class="section body_p1">
+		        <section class="p1_start">
+					<div class="action_top"><img src="img/action_bg_top.png" alt="action_top"></div>
+					<div class="action_bottom pr"><img src="img/action_bg_p3.png" alt=""></div>
+				</section>
+				<div class="action_bt action_p1 pr"><img src="img/action.png" alt=""></div>
+				<p class="p1_font_b"><img src="img/action_b.png" alt=""></p>
+		    </div>
+		    <div class="section">
+		    	<div class="body_p2">
+				<div class="p2_1 ps"><img src="img/p2_1.png" alt=""></div>
+				<div class="p2_cat ps"><img src="img/p2_3.png" alt=""></div>
+				<div class="p2_cat_2 ps"><img src="img/p2_4.png" alt=""></div>
+				<div class="p2_2 ps"><img src="img/p2_2.png" alt=""></div>
+				<div class="next ps"><img src="img/next.png" alt=""></div>
+				</div>
+		    </div>
+		    <div class="section body_p3">
+		    	<div class="slide">
+		    		<div class="p3_tab_1">
+						<img src="img/p3_1.png" alt="">
+					</div>
+		    	</div>
+		        <div class="slide">
+		        	<div class="p3_tab_2">
+						<img src="img/p3_2.png" alt="">
+					</div>
+		        </div>
+		        <div class="slide">
+		        	<div class="p3_tab_3">
+						<img src="img/p3_3.png" alt="">
+					</div>
+		        </div>
+		        <div class="next ps"><img src="img/next.png" alt=""></div>
+		    </div>
+		    <div class="section body_p4">
+		    	<div class="p4_lx clearfix">
+		    		<div class="p4_lx_l f_l">
+		    			<div class="p4_l_1">
+			    			<img src="img/p4_3_l1.png" alt="">
+			    		</div>
+			    		<div class="p4_l_2">
+			    			<img src="img/p4_3_l2.png" alt="">
+			    		</div>
+			    		<div class="p4_l_3">
+			    			<img src="img/p4_3_l3.png" alt="">
+			    		</div>
+			    		<div class="p4_l_4">
+			    			<img src="img/p4_1_l4.png" alt="">
+			    		</div>
+		    		</div>
+		    		<div class="p4_lx_r f_r">
+			    		<div class="p4_r_1">
+			    			<img src="img/p4_3_r1.png" alt="">
+			    		</div>
+			    		<div class="p4_r_2">
+			    			<img src="img/p4_3_r2.png" alt="">
+			    		</div>
+			    		<div class="p4_r_3">
+			    			<img src="img/p4_3_r3.png" alt="">
+			    		</div>
+			    		<div class="p4_r_4">
+			    			<img src="img/p4_3_r4.png" alt="">
+			    		</div>
+			    	</div>
+				</div>
+		        <div class="next ps"><img src="img/next.png" alt=""></div>
+		    </div>
+		    <div class="section">
+		    	<div class="body_p5">
+			    	<div class="p5_title">
+						<img src="img/p5_2.png" alt="">
+					</div>
+					<form action="#" class="p5_form formjoin clearfix">
+						<div class="clearfix">
+							<lable class="p5_lable f_l"><img src="img/p5_font_1.png" alt=""></lable>
+							<input type="text" name="joinname" class="input_text f_r">
+						</div>
+						<div class="clearfix">
+							<lable class="p5_lable f_l"><img src="img/p5_font_2.png" alt=""></lable>
+							<input type="number" name="phone" class="input_text f_r">
+						</div>
+						<div class="clearfix">
+							<lable class="p5_lable f_l"><img src="img/p5_font_3.png" alt=""></lable>
+							<input type="text" name="units" class="input_text f_r">
+						</div>
+						<div class="clearfix">
+							<lable class="p5_lable f_l"><img src="img/p5_font_4.png" alt=""></lable>
+							<input type="text" name="jobs" class="input_text f_r">
+						</div>
+					</form>
+					<div class="action_bt" id="p5_bt"><img src="img/tj.png" alt=""></div>
+					<script>
+					$(function(){
+						$("#p5_bt").click(function(){
+							var joinname = $.trim($('input[name = "joinname"]').val());
+							if(joinname == '') {alert("姓名不能为空！"); return false;}
+							var phone = $.trim($('input[name = "phone"]').val());
+							var regphone = new RegExp("^(1)\\d{10}$");
+							if(!regphone.test(phone)){alert("手机号码不正确！"); return false;}
+							// if(!/^(1)[0-9]{10}$/.test(phone)){alert("手机号码不正确！"); return false;}
+							var units = $.trim($('input[name = "units"]').val());
+							if(units == '') {alert("单位不能为空！"); return false;}
+							var jobs = $.trim($('input[name = "jobs"]').val());
+							if(jobs == '') {alert("职位不能为空！"); return false;}
+							$.post("http://101.200.180.96:8081/atz/index.php/index/addjoin.html",{joinname:joinname , phone:phone ,units:units,jobs:jobs },function(data){
+								if (data == 'success') {
+									$(".body_p5 ,.logo").hide();
+									$(".body_p6").show();
+								}else{
+									alert(data);
+								};
+							},'html');
+							joinname = phone = units = jobs = null;
+						});
+					});
+					</script>
+				</div>
+				<div class="body_p6 hidden">
+					<div class="p6_title pr">
+						<img src="img/p6_1.png" alt="">
+					</div>
+					<a href="#page1" class="gotop1"><img src="img/gotop1.png" alt=""></a>
+				</div>
+		    </div>
+	    </div>
+	</body>
+
+</html>

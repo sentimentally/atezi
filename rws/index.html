@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>任务书</title>
+		<meta name="author" content="李潇喃：www.muzisheji.com" />
+		<!-- IE最新兼容 -->
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+		<!-- 国产浏览器高速 -->
+		<!-- <meta name="renderer" content="webkit"> -->
+		<!-- 移动设备禁止缩放 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Mzsj" />
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+		<link rel="stylesheet" href="css/reset.css">
+<<<<<<< HEAD
+		<script src="js/iscroll.js"></script>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/zepto.fullpage.js"></script>
+		<script>
+		var myScroll,myScroll2,myScroll3;
+		function loaded() {
+			myScroll = new IScroll('#scroller');
+			myScroll2 = new IScroll('#scroller2');
+			myScroll3 = new IScroll('#scroller3');
+		}
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+		window.onload = function(){
+			$(".boxs").fullpage({drag:false,
+=======
+		<script src="js/zepto.min.js"></script>
+		<script src="js/zepto.fullpage.js"></script>
+		<script>
+		window.onload = function(){
+			$(".boxs").fullpage({
+>>>>>>> origin/master
+				beforeChange: function (e) {
+	                $(".p2_1").removeClass("p2_1_dh");
+					$(".p2_2").removeClass("p2_2_dh");
+					$(".p2_cat").removeClass("p2_cat_dh");
+					$(".p2_cat_2").removeClass("p2_cat_2_dh");
+	            },
+	            afterChange: function (e) {
+	                // 进入时动画
+					$(".p2_1").addClass("p2_1_dh");
+					$(".p2_2").addClass("p2_2_dh");
+					$(".p2_cat").addClass("p2_cat_dh");
+					$(".p2_cat_2").addClass("p2_cat_2_dh");
+	            }
+			});
+			// 向上滑动汽车效果 p2_2_td
+			var startX, startY;
+			var p2_2_td = document.querySelector(".p2_2_td");
+			p2_2_td.addEventListener('touchstart',function (ev) {
+			    startX = ev.touches[0].pageX;
+			    startY = ev.touches[0].pageY; 
+			},false);
+			p2_2_td.addEventListener('touchend',function (ev) {
+			    var endX, endY;
+			    endX = ev.changedTouches[0].pageX;
+			    endY = ev.changedTouches[0].pageY;
+<<<<<<< HEAD
+			    if (endY - startY < -20) {
+=======
+			    if (endY - startY < -50) {
+>>>>>>> origin/master
+			    	$(".p2_2_td").addClass('p2_2_td_dh');
+			    };
+			    endX = endY = null;
+			},false);
+			// 返回等
+		    $(".fanhui").click(function(){
+		    	$(".body_p3 ,.hdgz ,.xflx ,.psmt").hide();
+		    	$(".body_p2_2").show();
+<<<<<<< HEAD
+		    	// $.fn.fullpage.start();
+=======
+		    	$.fn.fullpage.start();
+>>>>>>> origin/master
+		    });
+		    $(".p2_2_1").click(function(){
+		    	$(".body_p2_2").hide();
+		    	$(".body_p3 ,.hdgz").show();
+<<<<<<< HEAD
+		    	setTimeout(function(){loaded();},150);
+		    	// $.fn.fullpage.stop();
+=======
+		    	$.fn.fullpage.stop();
+>>>>>>> origin/master
+		    });
+		    $(".p2_2_2").click(function(){
+		    	$(".body_p2_2").hide();
+		    	$(".body_p3 ,.xflx").show();
+<<<<<<< HEAD
+		    	setTimeout(function(){loaded();},150);
+		    	// $.fn.fullpage.stop();
+=======
+		    	$.fn.fullpage.stop();
+>>>>>>> origin/master
+		    });
+		    $(".p2_2_3").click(function(){
+		    	$(".body_p2_2").hide();
+		    	$(".body_p3 ,.psmt").show();
+<<<<<<< HEAD
+		    	setTimeout(function(){loaded();},150);
+		    	// $.fn.fullpage.stop();
+		    });
+=======
+		    	$.fn.fullpage.stop();
+		    });
+		    // 左右滑动拍摄命题
+		    var mt_img = document.querySelector(".mt_img");
+			mt_img.addEventListener('touchstart',function (ev) {
+			    startX = ev.touches[0].pageX;
+			    startY = ev.touches[0].pageY; 
+			},false);
+			mt_img.addEventListener('touchend',function (ev) {
+			    var endX, endY;
+			    endX = ev.changedTouches[0].pageX;
+			    endY = ev.changedTouches[0].pageY;
+			    if (startX - endX > 40) {
+			    	$(".kj_1").hide();
+			    	$(".kj_2").show();
+			    };
+			    if (startX - endX < -40) {
+			    	$(".kj_1").show();
+			    	$(".kj_2").hide();
+			    };
+			    endX = endY = null;
+			},false);
+>>>>>>> origin/master
+		}
+		</script>
+	</head>
+
+	<body>
+		<header class="logo">
+			<img src="img/logo.png" alt="阿特兹">
+		</header>
+<<<<<<< HEAD
+		<div class="body_p3 ps hidden">
+			<div class="hdgz ps hidden">
+				<div class="gzwz pr" id="scroller">
+					<img src="img/gzwz.png" alt="">
+				</div>
+			</div>
+			<div class="xflx ps hidden">
+				<div class="gzwz pr" id="scroller2">
+				<img src="img/lx_img.png" alt="" class="lx_img">
+				</div>
+			</div>
+			<div class="psmt ps hidden">
+				<div class="gzwz pr" id="scroller3">
+					<img src="img/psmt.png" alt="">
+				</div>
+			</div>
+			<img src="img/fanhui.png" alt="" class="fanhui ps">
+		</div>
+
+
+		<div class="boxs pr">
+		    <!-- p1 -->
+		    <div class="page overh pr">
+		   			
+=======
+		<div class="wp">
+		<div class="boxs pr">
+		    <!-- p1 -->
+		    <div class="page overh pr">
+>>>>>>> origin/master
+		    	<div class="body_p2">
+				<div class="p2_1 ps"><img src="img/p2_1.png" alt=""></div>
+				<div class="p2_cat ps"><img src="img/p2_3.png" alt=""></div>
+				<div class="p2_cat_2 ps"><img src="img/p2_4.png" alt=""></div>
+				<div class="p2_2 ps"><img src="img/p2_2.png" alt=""></div>
+				<div class="next ps"><img src="img/next.png" alt=""></div>
+				</div>
+		    </div>
+			<!-- body_p2_2 -->
+			<div class="page page2 overh pr">
+				<div class="body_p2_2 pr">
+					<div class="p2_2_td pr">
+						<div class="p2_2_4"><img src="img/p2_2_4.png" alt=""></div>
+						<div class="p2_2_1"><img src="img/p2_2_1.png" alt=""></div>
+						<div class="p2_2_2"><img src="img/p2_2_2.png" alt=""></div>
+						<div class="p2_2_3"><img src="img/p2_2_3.png" alt=""></div>
+					</div>
+				</div>
+<<<<<<< HEAD
+=======
+				<div class="body_p3 pr hidden">
+					<div class="hdgz ps hidden">
+						<div class="gzwz pr"><img src="img/gzwz.png" alt=""></div>
+					</div>
+					<div class="xflx ps hidden">
+						<img src="img/lx_img.png" alt="" class="lx_img">
+					</div>
+					<div class="psmt ps hidden">
+						<div class="mt_img">
+							<div class="kj_1">
+								<img src="img/right_bn.png" alt="" class="jt_right ps">
+								<img src="img/kj_1.png" alt="">
+							</div>
+							<div class="kj_2 hidden">
+								<img src="img/left_bn.png" alt="" class="jt_left ps">
+								<img src="img/kj_2.png" alt="">
+							</div>
+						</div>
+					</div>
+					<img src="img/fanhui.png" alt="" class="fanhui ps">
+				</div>
+>>>>>>> origin/master
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>
