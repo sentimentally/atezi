@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-		<title>任务书</title>
+		<title>路"摇"知马力</title>
 		<meta name="author" content="李潇喃：www.muzisheji.com" />
 		<!-- IE最新兼容 -->
 		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
@@ -30,7 +30,7 @@
 		<script src="js/jquery.min.js"></script>
 		<script>
 		// 定义一些游戏参数
-		var SHAKE_THRESHOLD = 500;	//摇动范围
+		var SHAKE_THRESHOLD = 100;	//摇动范围
 	    var last_update = 0;		//时间
 	    var x = y = z = last_x = last_y = last_z = 0;  //初始化
 	    var gls = 0;		//最初公里数
@@ -51,7 +51,7 @@
 	    function deviceMotionHandler(eventData) {
 	      var acceleration = eventData.accelerationIncludingGravity;
 	      var curTime = new Date().getTime();
-	      if ((curTime - last_update) > 600) {
+	      if ((curTime - last_update) > 100) {
 	        var diffTime = curTime - last_update;
 	        last_update = curTime;
 	        x = acceleration.x;
