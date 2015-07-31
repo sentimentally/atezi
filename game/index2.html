@@ -34,6 +34,7 @@
 	    var last_update = 0;		//时间
 	    var x = y = z = last_x = last_y = last_z = 0;  //初始化
 	    var gls = 0;		//最初公里数
+	    var isstart = 0;
 	    // 开始游戏
 	    function startgame() {
           // 判断是否重新开始
@@ -46,30 +47,31 @@
 	      setTimeout(b,10000);
 	    }
 	    function deviceMotionHandler(eventData) {
-		    var acceleration = eventData.accelerationIncludingGravity;
-		    var curTime = new Date().getTime();
-		    if ((curTime - last_update) > 100) {
-		      var diffTime = curTime - last_update;
-		      last_update = curTime;
-		      x = acceleration.x;
-		      y = acceleration.y;
-		      z = acceleration.z;
-		      var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
-		      // 摇的时候动画开始，更新数字成绩
-		      if (speed > SHAKE_THRESHOLD) {
-		    	gls = gls + 10;
-		    	$(".body_p2").addClass("body_p2_dh");
-		        $(".nums").text(gls);
-		      }else{
-		      	// 不摇关闭动画
-		      	$(".body_p2").removeClass("body_p2_dh");
-		      }
-		      last_x = x;
-		      last_y = y;
-		      last_z = z;
-		    }
+			    var acceleration = eventData.accelerationIncludingGravity;
+			    var curTime = new Date().getTime();
+			    if ((curTime - last_update) > 100) {
+			      var diffTime = curTime - last_update;
+			      last_update = curTime;
+			      x = acceleration.x;
+			      y = acceleration.y;
+			      z = acceleration.z;
+			      var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+			      // 摇的时候动画开始，更新数字成绩
+			      if (speed > SHAKE_THRESHOLD) {
+			    	gls = gls + 10;
+			    	$(".body_p2").addClass("body_p2_dh");
+			        $(".nums").text(gls);
+			      }else{
+			      	// 不摇关闭动画
+			      	$(".body_p2").removeClass("body_p2_dh");
+			      }
+			      last_x = x;
+			      last_y = y;
+			      last_z = z;
+			    }
 	    }
 	    function b(){
+	    	isstart = 1;
 	    	window.removeEventListener('devicemotion', deviceMotionHandler,false);
 	    	$(".body_p2").removeClass("body_p2_dh");
 	      // 判断是否可以重新开始，置0可以重新开始
