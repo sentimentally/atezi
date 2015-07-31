@@ -34,42 +34,47 @@
 	    var last_update = 0;		//时间
 	    var x = y = z = last_x = last_y = last_z = 0;  //初始化
 	    var gls = 0;		//最初公里数
+	    var isstart = 0;
 	    // 开始游戏
 	    function startgame() {
-	      $(".nums").empty();
-	      if (gls === 0 ) {
-	          // 判断是否重新开始
-	          if (window.DeviceMotionEvent) {
-	            window.addEventListener('devicemotion', deviceMotionHandler, false);
-	          } else {
-	              alert('亲~你的手机要换新喽！');
-	          }
-	          // 游戏时间
-	          setTimeout(b,10000);
-	      }
+          // 判断是否重新开始
+          if (window.DeviceMotionEvent) {
+            window.addEventListener('devicemotion', deviceMotionHandler, false);
+          } else {
+              alert('亲~你的手机要换新喽！');
+          }
+          // 游戏时间
+	      setTimeout(b,30000);
 	    }
 	    function deviceMotionHandler(eventData) {
-	      var acceleration = eventData.accelerationIncludingGravity;
-	      var curTime = new Date().getTime();
-	      if ((curTime - last_update) > 100) {
-	        var diffTime = curTime - last_update;
-	        last_update = curTime;
-	        x = acceleration.x;
-	        y = acceleration.y;
-	        z = acceleration.z;
-	        var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
-	        if (speed > SHAKE_THRESHOLD) {
-	          gls = gls + 10;
-	        }
-	        last_x = x;
-	        last_y = y;
-	        last_z = z;
-	      }
+	    	if (isstart === 0) {
+			    var acceleration = eventData.accelerationIncludingGravity;
+			    var curTime = new Date().getTime();
+			    if ((curTime - last_update) > 100) {
+			      var diffTime = curTime - last_update;
+			      last_update = curTime;
+			      x = acceleration.x;
+			      y = acceleration.y;
+			      z = acceleration.z;
+			      var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+			      // 摇的时候动画开始，更新数字成绩
+			      if (speed > SHAKE_THRESHOLD) {
+			    	gls = gls + 10;
+			    	$(".body_p2").addClass("body_p2_dh");
+			        $(".nums").text(gls);
+			      }else{
+			      	// 不摇关闭动画
+			      	$(".body_p2").removeClass("body_p2_dh");
+			      }
+			      last_x = x;
+			      last_y = y;
+			      last_z = z;
+			    }
+		    }
 	    }
 	    function b(){
+	    	isstart = 1;
 	    	$(".body_p2").removeClass("body_p2_dh");
-	    	$(".nums").text(gls);
-	    	$('.gameend').show();
 	      // 判断是否可以重新开始，置0可以重新开始
 	      // gls = 0;
 	    }
@@ -87,13 +92,14 @@
 				setTimeout(function(){
 					$(".djs").addClass("action");
 				}, 3000);
-				setTimeout(function(){
-					$(".body_p2").addClass("body_p2_dh");
-				}, 4000);
+				// setTimeout(function(){
+				// 	$(".body_p2").addClass("body_p2_dh");
+				// }, 200);
 				setTimeout(function(){
 					$(".djs").remove();
+					$('.gameend').show();
 					startgame();
-				}, 4200);
+				}, 3200);
 			});
 			
 	    });
@@ -114,7 +120,7 @@
 		<div class="body_p2 pr hidden">
 			<div class="djs pr"></div>
 			<div class="gameend pr hidden">
-				<div class="df"><span class="nums">1500</span><span class="mi">&nbsp;米</span></div>
+				<div class="df"><span class="nums">0</span><span class="mi">&nbsp;米</span></div>
 				<img src="img/gameend.png" alt="">
 			</div>
 			<div class="p2_car ps"><img src="img/p2_car.png" alt=""></div>
